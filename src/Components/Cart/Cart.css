@@ -1,0 +1,17 @@
+.CartMainDiv{
+    display: flex;
+    flex-direction: column;
+    row-gap: 1vh;
+    justify-content: center;
+    align-items: center;
+}
+.CartCheckoutBtn{
+    background-color: aquamarine;
+    padding: 9px;
+    border-radius: 10px;
+}
+.CartCheckoutBtn:hover{
+    background-color: rgb(96, 195, 162);
+    cursor: pointer;
+    transition: 0.3s;
+}

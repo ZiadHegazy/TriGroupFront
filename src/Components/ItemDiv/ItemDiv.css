@@ -1,0 +1,19 @@
+.ItemDiv{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    row-gap: 1vh;
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+    font-weight: bold;
+    width: 25%;
+  }
+  .ItemDiv:hover{
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 1);
+    transition: 0.3s;
+    cursor:pointer;
+
+  }
+  
+  

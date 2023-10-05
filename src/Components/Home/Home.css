@@ -1,0 +1,142 @@
+.HomeMainDiv{
+    display: flex;
+    flex-direction: column;
+    row-gap: 1vh;
+    width: 100%;
+    height: 100%;
+    height: fit-content;
+    background-color: #e3e2e2;
+}
+.HomeNavBar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-color: white;
+    position: fixed;
+    row-gap: 1vh;
+    top: 0px;
+    z-index: 15;
+    
+}
+/* .HomeSearchInput{
+    width: 50%;
+    height: 30%;
+    position: relative;
+    top:10%
+} */
+.icons{
+    font-size: 1rem;
+}
+.HomeLogoImage{ 
+    height: 50%;
+    width: 20%;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    width: 60%;
+  }
+  
+  .search-input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px 0 0 5px;
+    width: 80%;
+    height: 30%;
+  }
+  
+  .search-button {
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-left: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+  }
+  
+  /* Optional: Style the search icon */
+  .search-button i {
+    font-size: 1rem;
+  }
+  
+  /* Optional: Add hover effect */
+  .search-button:hover {
+    background-color: #ccc;
+    transition: 0.3s;
+  }
+  .HomeLoginButton{
+    border-radius: 10px;
+    padding: 9px;
+    font-size: 1rem;
+  }
+  .HomeLoginButton:hover{
+    cursor: pointer;
+    background-color: #ccc;
+    transition: 0.3s;
+  }
+  .HomeCategoryDiv{
+    display: flex;
+    flex-direction: row;
+    column-gap: 1vw;
+    overflow-x: auto;
+    width: 100%;
+  }
+  .HomeProductsDiv{
+    display: flex;
+    flex-direction: row;
+    column-gap: 1vw;
+    /* overflow-x: auto; */
+    width: 100%;
+    flex-wrap: wrap;
+    row-gap: 1vh;
+    padding-left: 1vw;
+  }
+  .HomeCartButton{
+    border:none;
+    background:transparent;
+    font-size:2rem
+  }
+  .HomeCartButton:hover{
+    cursor: pointer;
+    background-color: #ccc;
+    transition: 0.3s;
+  }
+  
+  @media screen and (max-width:600px) {
+    .HomeNavBar{
+        width: 100%;
+        height: fit-content;
+        flex-wrap: wrap;
+        justify-content: start;
+    }
+    .HomeLogoImage{
+        width: 30%;
+    }
+    .icons{
+        font-size: 0.8rem;
+    }
+    .HomeLoginButton{
+        font-size: 0.8rem;
+        padding: 5px;
+    }
+    .search-container{
+        width: 50%;
+    }
+    .search-input{
+        padding:5px
+    }
+    .search-button i{
+        font-size: 0.8rem;
+    }
+    .search-button{
+        padding:5px
+
+    }
+    .HomeCartButton{
+      font-size: 1.2rem;
+    }
+    
+    
+  }
