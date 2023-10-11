@@ -3,16 +3,37 @@ import trigroup from "../../Images/triIcon.png"
 import "./Home.css"
 import { Navbar } from "../Navbar/Navbar"
 import { ItemDiv } from "../ItemDiv/ItemDiv"
+import { getAllProducts } from "../../API/Product"
+import { getTokenNoLogin, validateToken } from "../../API/Auth"
+import { CircularProgress } from "@mui/material"
 export function Home(){
-    const[category,setCategory]=useState([])
+    const [loading,setLoading]=useState(true)
+    const[allProducts,setAllProducts]=useState([])
     useEffect(()=>{
-        var arr=[]
-        for(var i=0;i<100;i++){
-            arr.push(i)
+        async function getProducts(){
+            setAllProducts(await getAllProducts())
         }
-        setCategory(arr)
-        
-    },[category])
+        async function getToken(){
+            if(!localStorage.getItem("token")){
+                const token=await getTokenNoLogin()
+                localStorage.setItem("token",token)
+            }
+
+        }
+        async function validateTokenHome(){
+            if(localStorage.getItem("token")){
+                const result=await validateToken()
+                if(result !="goodToken"){
+                    localStorage.setItem("token",result)
+                }
+            }
+        }
+        setLoading(true)
+        getProducts()
+        getToken()
+        validateTokenHome()
+        setLoading(false)
+    },[])
     
     return(
         <div className="HomeMainDiv">
@@ -29,11 +50,11 @@ export function Home(){
 
             </div> */}
             <h1>Our Products</h1>
+            {loading && <CircularProgress style={{alignSelf:"center"}}/>}
             <div className="HomeProductsDiv">
-                {category.map((category)=><ItemDiv/>)}
+                {allProducts.map((product)=><ItemDiv  item={product}/>)}
 
             </div>
-
         </div>
     )
 

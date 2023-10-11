@@ -16,3 +16,13 @@ export const getProduct=async(id)=>{
       return response.data
 
 }
+export const addProduct=async(data)=>{
+  await axios.post(`${api}/addProduct`, data,{
+            headers: {
+              'Content-Type': 'multipart/form-data'
+            }})
+  };
+export const getAllProducts=async()=>{
+  const result=await axios.get(`${api}/getAllProducts`)
+  return result.data
+}

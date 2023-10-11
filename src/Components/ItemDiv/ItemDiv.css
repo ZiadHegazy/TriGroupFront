@@ -8,12 +8,15 @@
     padding: 10px;
     font-weight: bold;
     width: 25%;
+    height: 305px;
   }
   .ItemDiv:hover{
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 1);
     transition: 0.3s;
     cursor:pointer;
-
   }
-  
+  .ItemImage{
+    height:60%;
+    width:75%
+  }
   

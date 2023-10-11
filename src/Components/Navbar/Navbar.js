@@ -3,6 +3,7 @@ import trigroup from "../../Images/triIcon.png"
 import { useNavigate } from "react-router-dom"
 export function Navbar(props){
     const navigate=useNavigate()
+    
     return(
         <div className="HomeNavBar">
                 <img className="HomeLogoImage" src={trigroup}/>
@@ -13,8 +14,9 @@ export function Navbar(props){
                 </button>
                 </div>
                 {!props.admin && <button onClick={()=>navigate("/cart")} className="HomeCartButton" disabled={!props.cart} ><i className="fa fa-shopping-cart"></i></button>}                
-                <button onClick={()=>navigate("/login")} className="HomeLoginButton"> Login <i class="fa fa-user icons"></i> </button>
-                {!props.admin && <button onClick={()=>navigate("/register")} className="HomeLoginButton"> Register <i class="fa fa-user icons"></i> </button>
+                {!localStorage.getItem("login") && <button onClick={()=>navigate("/login")} className="HomeLoginButton"> Login <i class="fa fa-user icons"></i> </button>}
+                {localStorage.getItem("login") && <button className="HomeLoginButton"> <i class="fa fa-user icons"> </i></button> }
+                {!props.admin && !localStorage.getItem("login") && <button onClick={()=>navigate("/register")} className="HomeLoginButton"> Register <i class="fa fa-user icons"></i> </button>
 }
                 
 

@@ -36,3 +36,13 @@
     transition: 0.3s;
     cursor: pointer;
 }
+.LoginInputDivForm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 2vh;
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+}
